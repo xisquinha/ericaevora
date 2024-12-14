@@ -1,0 +1,277 @@
+@font-face { font-family: 'mainFont'; src: url("../fonts/ropa-sans.regular.ttf"); } 
+
+*{
+    font-family: 'mainFont';
+    overflow-x: hidden;
+}
+
+
+.header{
+    background-color: white;
+
+    font-weight: bold;
+    font-size: 500%;
+
+    margin: auto;
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.header h1{
+    color: black;
+    text-align: center;
+
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #ff99da;
+
+
+}
+
+.navbar ul li{
+    float: left;
+}
+
+.navbar ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 170%;
+    transition: 0.4s;
+}
+.navbar ul li a:hover{
+    color: #db0a99;
+    background-color: white;
+}
+
+.navbar.sticky{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+}
+
+
+.home{
+    background-color: #cc0081;
+    padding-bottom: 50px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    padding: 5px
+}
+
+
+.home_fotos{
+    padding-top: 70px;
+}
+.home_fotos .c1{
+    width: 19.5%;
+}
+.home_fotos .c2{
+    width: 45.8%;
+}
+.home_fotos .c3{
+    width: 31.4%;
+}
+  
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.home_text{
+    padding-left: 50px;
+}
+.home_text p{
+    color: white;
+}
+.home_text .c1{
+    width: 25%;
+    font-size: 250%;
+    font-weight: bold;
+}
+.home_text .c2{
+    width: 65%;
+    padding-left: 70px;
+}
+.home_text .miniText{
+    padding-top: 50px;
+    font-size: 140%;
+}
+.home_button{
+    background-color: #800064;
+    border: 3px solid white;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 27px;
+
+    box-shadow: 3.5px 3.5px grey;
+}
+
+.sobre_mim{
+    background-color: black;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sobre_mim .foto1 img{
+    grid-area: fotoArea;
+}
+.sobre_mim .grid-container{
+    display: grid;
+    grid-template-areas: '. fotoArea';
+
+    padding: 10px;
+}
+.sobre_mim .text p{
+    padding-left: 50px;
+}
+.sobre_mim .foto1 img{
+    float: right;
+    padding-right: 30px;
+    padding-top: 30px;
+}
+.sobre_mim .grid-container2{
+    display: flex;
+    padding: 10px;
+    padding-top: 100px;
+}
+.sobre_mim .grid-container2 .text2{
+    padding-left: 50px;
+}
+.sobre_mim .foto2 img{
+    float: left;
+    
+}
+.sobre_mim .foto2{
+    width: 170%;
+    padding-left: 50px;
+    padding-top: 40px;
+}
+
+
+
+.personal_training{
+    padding: 50px;
+    color: #800057;
+    background-color: #ffd6f2;
+}
+
+.personal_training .reviews{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.personal_training .title{
+    margin-left: 7%;
+    font-size: 180%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.personal_training .reviews .row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 40px;
+}
+.personal_training .r1{
+    margin-right: 10%;
+}
+
+.personal_training .review{
+    width: 35%;
+    background-color: #800057;
+    color: white;
+}
+.personal_training .review .abc{
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 110%;
+}
+
+.personal_training .review .q1{
+    float: left;
+    font-weight: bold;
+    font-size: 200%;
+    margin-left: 5%;
+}
+.personal_training .review .q2{
+    float: right;
+    font-weight: bold;
+    font-size: 200%;
+    margin-right: 5%;
+    margin-top: -50px;
+}
+.personal_training .reviews .signature{
+    display: inline-flex;
+    font-size: 110%;
+    padding-left: 20%;
+    margin-top: -20%;
+    padding-bottom: 20px;
+}
+.personal_training .signature p{
+    margin-right: 10px;
+}
+.personal_training .signature img{
+    padding-top: 10px;
+    margin-right: 5px;
+}
+
+.corpos_reais .row{
+    display: flex;
+    width: 100%;
+}
+.corpos_reais .row .column{
+    width: 45%;
+}
+
+.corpos_reais .c1{
+    float: left;
+}
+.corpos_reais .c2{
+    float: right;
+    padding-left: 10%;
+}
+
+
+.corpos_reais p{
+    font-size: 110%;
+}
+
+.personal_training .corpos_reais .signature{
+    display: inline-flex;
+    margin-top: -20%;
+    padding-bottom: 20px;
+}
+
+
+
+
