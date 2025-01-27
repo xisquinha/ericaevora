@@ -10,15 +10,42 @@
     </head>
     <body>
 
+        <!--<%
+
+            String name = request.getParameter("fname");
+            String email = request.getParameter("femail");
+            String message = request.getParameter("fmessage");
+
+            if(name != null && !name.equals("") &&
+                email != null && !email.equals("") &&
+                message != null && !message.equals("")){
+                    sendEmail(email, nome, message);
+                }
+
+        %>-->
+
         <ul class="navbar">
             <li class="logo"><i class="fa-solid fa-dumbbell" style="color: white;"></i></li>
-            <li><a href="#contactos">Contactos</a></li>
-            <li><a href="#galeria">Galeira</a></li>
-            <li><a href="#reviews">Avaliações</a></li>
-            <li><a href="#transformacoes">Transformações</a></li>
-            <li><a href="#sobre_mim">Sobre mim</a></li>
-            <li><a href="#home" class="active" href="">Home</a></li>
+
+            <input type="checkbox" id="check">
+            <label for="check" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <!--<label for="check" class="checkbtn">-->
+                <!--<i class="fa-solid fa-bars" style="color: #ffffff;"></i>-->              
+            <!--</label>-->
+            <div class="options">
+                <li><a href="#contactos">Contactos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#reviews">Avaliações</a></li>
+                <li><a href="#transformacoes">Transformações</a></li>
+                <li><a href="#sobre_mim">Sobre mim</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+            </div>
         </ul>
+
 
         <section id="home">
             <div class="home">
@@ -29,21 +56,24 @@
                         DE TI MESMO
                         <span class="miniText"><br>
                             Com a minha ajuda vais conseguir melhorar a tua saúde,
-                            bem-estar e atingir os teus objetivos ! <br><br>
+                            bem-estar e atingir os teus objetivos! <br><br>
                             Vamos trabalhar juntos !!
                         </span>
-                        <button class="home_button">Fala comigo</button>
+                        <a href="#contactos"><button class="home_button">Fala comigo</button></a>
                     </p>
 
                 </div>
                 
-                <div class="imagem">
-                    <img src="imgs/erica_punch_no_bg.png" alt="foto erica">
+                <!--<div class="imagem"> -->
+                    <!-- <img src="imgs/erica_punch_no_bg.png" alt="foto erica"> -->
+                   <!-- <img src="imgs/full_hand2.png" alt="foto erica"> -->
+                    <!-- <div class="la_imagem"></div> -->
                 </div>
             </div>
         </section>
 
-          
+        <!--<p id="demo"></p>-->
+
         <section id="sobre_mim">
             <div class="sobre_mim">
                 <div class="imagem">
@@ -383,7 +413,7 @@
                     <div class="info">
                         <p>Envia um email, ou liga se tiveres dúvidas ou se quiseres agendar um treino.</p><br>
 
-                        <i class="fa-solid fa-envelope" style="color: #ffffff;"><span>&nbsp; erykanec@hotmail.com</span></i><br>
+                        <i class="fa-solid fa-envelope" style="color: #ffffff;"><span>&nbsp; ericaevora.pt@gmail.com</span></i><br>
                         <i class="fa-solid fa-phone" style="color: #ffffff;"><span>&nbsp; +351 924 314 869</span></i> 
                         <br><br><br>
                         
@@ -393,18 +423,18 @@
                     </div>
                 </div>
                 <div class="form">
-                    <form>
-                        <input class="name" type="text" id="fname" name="fname" placeholder="Nome"><br><br>
-                        <input class="email" type="email" id="femail" name="femail" placeholder="E-mail"><br><br>
-                        <textarea class="messagem" type="text" id="fmessage" name="fmessage" placeholder="Digita a tua mensagem aqui..."></textarea><br><br>
-                        <input type="submit" value="Enviar">
+                    <form method="POST">
+                        <input class="name" type="text" id="fname" name="fname" placeholder="Nome" required><br><br>
+                        <input class="email" type="email" id="femail" name="femail" placeholder="E-mail" required><br><br>
+                        <textarea class="messagem" type="text" id="fmessage" name="fmessage" placeholder="Digita a tua mensagem aqui..." required></textarea><br><br>
+                        <input type="submit" value="Enviar" onclick="sendEmail()"/>
                     </form>
                 </div>
             </div>
         </section>
 
         <div class="rights">
-            <p>©2025 criado por Francisca Inácio. All rights reserved.</p>
+            <p>©2025 Francisca Inácio. All rights reserved.</p>
         </div>
 
 
@@ -431,6 +461,62 @@
                     }
                 });
             });
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+            // Selecione todas as âncoras do carrossel
+            const anchors = document.querySelectorAll('.carousel__prev, .carousel__next');
+
+            // Adicione um evento de clique a cada âncora
+            anchors.forEach(anchor => {
+                anchor.addEventListener('click', function (event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+
+                // Obtenha o ID do slide de destino a partir do href
+                const targetSlideId = anchor.getAttribute('href').substring(1);
+                const targetSlide = document.getElementById(targetSlideId);
+
+                // Role para o slide de destino sem mover a página
+                if (targetSlide) {
+                    targetSlide.scrollIntoView({
+                    behavior: 'smooth', // Adiciona um efeito de rolagem suave
+                    block: 'nearest',  // Garante que o slide seja visível sem alterar o layout
+                    });
+                }
+                });
+            });
+            });
+
+            /*var w = window.innerWidth;
+
+            var x = document.getElementById("demo");
+            x.innerHTML = "Browser width: " + w;*/
+
+
+            // Seleciona todos os links dentro do menu
+            const menuLinks = document.querySelectorAll('.options a');
+            const checkbox = document.getElementById('check');
+
+            // Adiciona um evento de clique a cada link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                // Desmarca o checkbox (fecha o menu)
+                checkbox.checked = false;
+                menuIcon.classList.remove('active'); // Remove the "active" class to return to the hamburger state
+                });
+            });
+
+
+            // Select the menu icon (label for checkbox)
+            const menuIcon = document.querySelector('.menu-icon');
+
+            // Add event listener for toggling the active state
+            menuIcon.addEventListener('click', () => {
+                menuIcon.classList.toggle('active'); // Toggle the "active" class
+            });
+
+
+
         </script>
         
     </body>
