@@ -83,9 +83,7 @@ body{
     align-items: center;
 }
 
-.options{
-    height: 100%;
-}
+
   
 #check {
     display: none;
@@ -139,20 +137,25 @@ body{
 
 
 /******************************************************************/
+@media screen and (min-width: 891px) {
+    .options{
+        height: 100%;
+    }
+}
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 426px){
     .menu-icon{
         margin-right: 15px;
     }
     .options{
-        height: 80%;
+        height: 70%;
     }
-} 
+}
 
 
 @media screen and (max-width: 891px) {
 
-    @media screen and (min-width: 425px){
+    @media screen and (min-width: 426px){
         .menu-icon {
             margin-right: 50px;
         }
