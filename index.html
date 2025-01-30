@@ -461,33 +461,45 @@
             });
             });
 
-            /*var w = window.innerWidth;
-
-            var x = document.getElementById("demo");
-            x.innerHTML = "Browser width: " + w;*/
-
 
             // Seleciona todos os links dentro do menu
             const menuLinks = document.querySelectorAll('.options a');
             const checkbox = document.getElementById('check');
+            const menuIcon = document.querySelector('.menu-icon');
+
+            const style = document.createElement('style');
+            
 
             // Adiciona um evento de clique a cada link
             menuLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                // Desmarca o checkbox (fecha o menu)
-                checkbox.checked = false;
-                menuIcon.classList.remove('active'); // Remove the "active" class to return to the hamburger state
+                    // Desmarca o checkbox (fecha o menu)
+                    checkbox.checked = false;
+                    menuIcon.classList.remove('active'); // Remove the "active" class to return to the hamburger state
+                    
+                    document.head.appendChild(style);
+                    style.sheet.insertRule('* { overflow: auto; }', 0);
+   
                 });
             });
 
 
-            // Select the menu icon (label for checkbox)
-            const menuIcon = document.querySelector('.menu-icon');
+            
 
             // Add event listener for toggling the active state
-            menuIcon.addEventListener('click', () => {
+            menuIcon.addEventListener('click', (event) => {
+
                 menuIcon.classList.toggle('active'); // Toggle the "active" class
+                   
+                document.head.appendChild(style);
+                if(!checkbox.checked){
+                    style.sheet.insertRule('* { overflow: hidden; }', 0);
+                }else{
+                    style.sheet.insertRule('* { overflow: auto; }', 0);
+                }
+                
             });
+
 
 
 
