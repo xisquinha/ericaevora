@@ -499,6 +499,29 @@
                 }
                 
             });
+
+
+            window.addEventListener('DOMContentLoaded', function () {
+            const message = document.querySelector('.message');
+
+            if (message) {
+                // Testa se background-attachment: fixed é suportado
+                const testFixed = window.getComputedStyle(message).backgroundAttachment === 'fixed';
+
+                if (!testFixed) {
+                    // Aplica a classe para fallback
+                    message.classList.add('scroll');
+
+                    // Simula o efeito de "background fixo"
+                    window.addEventListener('scroll', function () {
+                        const scrolled = window.scrollY;
+                        message.style.backgroundPosition = `center ${scrolled * 0.5}px`;
+                    });
+                }
+            }
+            });
+
+
         </script>    
     </body>
 </html>
