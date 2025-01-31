@@ -513,8 +513,15 @@ body{
 
     display: flex;
     padding: 60px;
-    
 }
+
+
+@supports not (background-attachment: fixed) {
+    .message {
+      background-attachment: scroll;
+    }
+}
+
 
 
 .message .title{
