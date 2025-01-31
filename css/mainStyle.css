@@ -505,11 +505,12 @@ body{
 
 
 .message{
-    background-image: url("../imgs/back_fixed.jpg");
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+
+    background: url("../imgs/back_fixed.jpg") no-repeat center center fixed;
     background-size: cover;
+    -webkit-background-size: cover;
+    -prefix-background-size: cover;
 
     display: flex;
     padding: 60px;
