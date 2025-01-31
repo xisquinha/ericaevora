@@ -516,11 +516,6 @@ body{
     
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
-    .message{
-        background-attachment: scroll;
-    }
-}
 
 .message .title{
     font-size: 63px;
