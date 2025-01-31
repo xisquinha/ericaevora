@@ -499,17 +499,6 @@
                 }
                 
             });
-
-
-            // Verifica se o navegador suporta `background-attachment: fixed`
-            if (!CSS.supports('background-attachment: fixed')) {
-            document.addEventListener('scroll', function () {
-                const scrolled = window.scrollY;
-                document.querySelector('.message').style.backgroundPosition = `center ${scrolled * 0.5}px`;
-            });
-            }
-
-
         </script>    
     </body>
 </html>
