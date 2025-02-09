@@ -843,6 +843,8 @@ ol, li {
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+
+    overflow: hidden;
  
 }
 
@@ -1193,7 +1195,8 @@ ol, li {
 
 
 .contactos{
-    padding: 50px;
+    padding-right: 50px;
+    padding-left: 70px;
     padding-top: 100px;
     padding-bottom: 150px;
     background-color: #1a1a1a;
@@ -1208,8 +1211,11 @@ ol, li {
     font-size: 63px;
     font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
 
-    text-align: center;
+    text-align: left;
+
     padding-bottom: 10px;
+
+    
 }
 
 .contactos .enunciado{
@@ -1228,7 +1234,6 @@ ol, li {
 }
 
 .contactos .info{
-    padding-left: 200px;
     font-size: 20px;
 }
 .contactos .form{
@@ -1241,12 +1246,6 @@ ol, li {
     padding-right: 50px;
 }
 
-.contactos .redes_sociais{
-    font-size: 30px;
-    height: 35px;
-
-    align-items: center;
-}
 
 .form .name, .form .email{
     width: 50%;
@@ -1256,7 +1255,7 @@ ol, li {
     box-sizing: border-box;
 }
 
-.form .messagem{
+.form .mensagem{
     width: 50%;
     padding: 12px 20px;
     border: 1px solid #ccc;
@@ -1280,6 +1279,51 @@ input[type=submit]:hover{
 
     background-color: #cc0066
 }
+
+
+@media screen and (max-width: 768px){
+    .contactos{
+        display: block;
+    }
+    .contactos .enunciado{
+        text-align: center;
+        width: 100%;
+    }
+
+    .contactos .form{
+        width: 100%;
+        text-align: center;
+    }
+
+    .form .name, .form .email, .form .mensagem{
+        width: 80%;
+    }
+
+    @media screen and (max-width: 425px){
+
+        .contactos{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .contactos .enunciado .semi_title{
+            text-align: center;
+            font-size: 60px;
+        }
+
+        .contactos .info{
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 375px){
+            .contactos .enunciado .semi_title{
+                font-size: 57px;
+            }
+        }
+    }
+}
+
+
 
 .rights{
     background-color: #333333;
