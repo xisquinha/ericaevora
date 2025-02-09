@@ -279,7 +279,7 @@ body{
 .home .text .slogan{
     color: white;
     font-size: 70px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
 }
 
 
@@ -425,7 +425,7 @@ body{
 
 .sobre_mim .text .title{
     font-size: 63px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
     padding-top: 50px;
 
 }
@@ -522,7 +522,7 @@ body{
 
 .message .title{
     font-size: 63px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
     width: 55%;
     
     margin: 0;
@@ -588,7 +588,7 @@ body{
         }
         .message .blablabla{
             width: 90%;
-            text-align: justify;
+            text-align: center;
         }
     }
 
@@ -601,53 +601,130 @@ body{
             font-size: 15px;
             width: 100%;
         }
+
+        .message{
+            background-attachment: scroll;
+        }
     }
 }
 
 
 
 
-.testemunhos{
+.corpos{
     background-color:black;
+
+    padding-bottom: 100px;
 }
-.testemunhos p{
+.corpos p{
     color: white;
 }
 
-.testemunhos .title{
+.corpos .title{
     font-size: 63px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
 
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-.testemunhos .media{
+.corpos .media{
     display: flex;
-
     padding-bottom: 50px;
 }
 
-.testemunhos .corpo1{
+.corpos .corpo1{
     width: 40%;
     text-align: center;
-    padding-left: 10%;
-    
+    padding-left: 10%; 
 }
-.testemunhos .corpo1 img{
+
+.corpos .corpo1 img{
     width: 85%;
     align-self: center;
 }
 
-.testemunhos .corpo2{
+.corpos .corpo2{
     width: 40%;
     text-align: center;
+    padding-right: 10%;
   
 }
-.testemunhos .corpo2 video{
+.corpos .corpo2 video{
     width: 65%;
 }
+
+@media screen and (max-width: 1024px){
+    .corpos .corpo1 {
+        width: 50%;
+        padding-left: 5%;
+    }
+    .corpos .corpo1 img{
+        width: 100%;
+    }
+
+    .corpos .corpo2 {
+        width: 50%;
+        padding-right: 5%;
+    }
+    .corpos .corpo2 video{
+        width: 71.5%;
+    }
+
+    @media screen and (max-width:768px){
+
+        .corpos .title{
+            font-size: 55px;
+        }
+
+        @media screen and (max-width:514px) and (min-width: 425px){
+            .corpos .title{
+                font-size: 45px;
+            }
+        }
+
+        .corpos .media{
+            display: block;
+        }
+        .corpos .corpo1{
+            width: 100%;
+            padding: 0;
+
+            padding-bottom: 150px;
+        }
+        .corpos .corpo1 img{
+            width: 70%;
+        }
+
+        .corpos .corpo2{
+            width: 100%;
+            padding: 0;
+        }
+        .corpos .corpo2 video{
+            width: 55%;
+        }
+
+
+        @media screen and (max-width:425px){
+            .corpos .title{
+                font-size: 35px;
+            }
+
+            .corpos .corpo1 img{
+                width: 85%;
+            }
+
+            .corpos .corpo2 video{
+                width: 77%;
+            }
+    
+        }
+    }
+}
+
+
+
 
 .reviews{
     background-color: #1a1a1a;
@@ -656,7 +733,7 @@ body{
 .reviews .title{
     color: white;
     font-size: 63px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
 
     padding-top: 50px;
     padding-left: 50px;
@@ -664,8 +741,12 @@ body{
 
 
 
-
-
+@media screen and (max-width: 768px){
+    .reviews .title{
+        text-align: center;
+        padding-left: 0;
+    }
+}
 
 
 
@@ -742,11 +823,12 @@ ol, li {
 }
 
 .carousel {
-  position: relative;
-  padding-top: 35%;
+    position: relative;
+    padding-top: 35%;
+    padding-bottom: 35%;
 
-  overflow: hidden;
-
+    overflow: hidden;
+    margin-bottom: 50px;
 }
 
 .carousel__viewport {
@@ -754,18 +836,18 @@ ol, li {
 
     top: 15%;
     bottom: 15%;
-    right: 15%;
-    left: 15%;
+    right: 10%;
+    left: 10%;
 
     display: flex;
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-
-    
+ 
 }
 
-.carousel__slide {
+
+.carousel__slide, .carousel__slide_single {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
@@ -782,7 +864,7 @@ ol, li {
   background-color: #99f;
 }*/
 
-.carousel__slide:before {
+.carousel__slide:before, .carousel__slide_single:before {
 
   position: absolute;
   top: 50%;
@@ -877,19 +959,19 @@ ol, li {
 }
 
 .carousel::before {
-    left: 15%;
+    left: 10%;
 }
 .carousel__prev{
     left: 0;
-    top: 42%;
+    top: 42.5%;
 }
 
 .carousel::after {
-    right: 15%;
+    right: 10%;
 }
 .carousel__next{
     right: 0;
-    top: 42%;
+    top: 42.5%;
 }
 
 .carousel::before,
@@ -921,6 +1003,7 @@ ol, li {
     padding: 50px;
     display: flex;
 
+    height: 70%;
 }
 
 .double_reviews .review2, .double_reviews .review1{
@@ -928,6 +1011,20 @@ ol, li {
     background-color: white;
     margin: auto;
     border-radius: 6%;
+    height: 100%;
+}
+
+.single_review{
+    display: flex;
+    height: 80%;
+    width: 70%;
+    background-color: white;
+    border-radius: 30px;
+    margin: auto;
+}
+
+.single_review .review{
+    padding: 10px;
 }
 
 .double_reviews p{
@@ -935,10 +1032,10 @@ ol, li {
 }
 
 .review{
-    padding: 10px;
-    max-height: 250px;
-
+    padding: auto;
+    height: 100%;
 }
+
 .review .header{
     display: flex;
 
@@ -949,7 +1046,6 @@ ol, li {
     width: 55px;
     border-radius: 50%;
     padding: 15px;
-
 }
 .review .header .nome_user{
     font-weight: bold;
@@ -964,6 +1060,78 @@ ol, li {
     padding: 15px;
 }
 
+@media screen and (max-width: 425px){
+    .reviews .title{
+        font-size: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        padding-bottom: 50px;
+    }
+
+    .carousel::before {
+        top: 41%;
+        left: 2%;
+    }
+    .carousel__prev{
+        top: 40.5%;
+        left: 0;
+    }
+    
+    .carousel::after {
+        top: 41%;
+        right: 2%;
+    }
+    .carousel__next{
+        top: 40.5%;
+        right: 0;
+    }
+
+    .carousel__viewport { 
+        top: 0;
+        bottom: 0;
+        right: 5%;
+        left: 5%;
+    }
+
+    .carousel{
+        margin-bottom: 100px;
+    }
+
+    .review .header img{
+        width: 45px;
+        padding: 10px;
+    }
+    .review .stars{
+        padding-left: 10px;
+    }
+    .review .text{
+        padding: 5px;
+    }
+
+    .review .text p{
+        font-size: 13.5px;
+    }
+
+
+}
+@media screen and (max-width: 768px){
+    .carousel__slide {
+        display: none;
+    }
+    .carousel__slide_single{
+        display: block;
+    }
+}
+@media screen and (min-width: 768px){
+    .carousel__slide{
+        display: block;
+    }
+    .carousel__slide_single{
+        display: none;
+    }
+}
+
 
 
 .galeria{
@@ -976,7 +1144,7 @@ ol, li {
 
 .galeria .title{
     font-size: 63px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
 
     text-align: center;
     padding-top: 50px;
@@ -1006,6 +1174,24 @@ ol, li {
     overflow: hidden;
 }
 
+@media screen and (max-width: 768px){
+    .galeria .title{
+        padding-bottom: 10px;
+    }
+
+    .galeria .grid-container{
+        display: block;
+        padding: 20px;
+    }
+
+    .galeria .grid-container div{
+        padding-bottom: 50px;
+    }
+}
+
+
+
+
 .contactos{
     padding: 50px;
     padding-top: 100px;
@@ -1020,7 +1206,7 @@ ol, li {
 
 .contactos .semi_title{
     font-size: 63px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Anton', 'Arial Narrow Bold', sans-serif;
 
     text-align: center;
     padding-bottom: 10px;
