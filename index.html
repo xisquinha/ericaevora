@@ -27,7 +27,7 @@
         %>-->
 
         <ul class="navbar">
-            <li class="logo"><i class="fa-solid fa-dumbbell" style="color: white;"></i></li>
+            <li class="logo"><a class="logo_a" href="#"><i class="fa-solid fa-dumbbell" style="color: white;"></i></a></li>
 
             <input type="checkbox" id="check">
             <label for="check" class="menu-icon">
@@ -636,7 +636,8 @@
                     <p class="semi_title">Fala comigo</p>
 
                     <div class="info">
-                        <p>Envia um email, ou liga se tiveres dúvidas ou se quiseres agendar um treino.</p><br>
+                        <p>Envia um email, ou liga se tiveres dúvidas ou se quiseres agendar um treino.<br>
+                        Os treinos são realizados nos ginásios Viva Gym de Alfragide e Almada.</p><br>
 
                         <i class="fa-solid fa-envelope" style="color: #ffffff;"><span>&nbsp; ericaevora.pt@gmail.com</span></i><br>
                         <i class="fa-solid fa-phone" style="color: #ffffff;"><span>&nbsp; +351 924 314 869</span></i> 
@@ -649,6 +650,11 @@
                 </div>
                 <div class="form">
                     <form method="POST">
+                        <select name="gym" id="gym" required>
+                            <option value="">-- Selecione um ginásio --</option>
+                            <option value="alfragide">VivaGym Alfragide</option>
+                            <option value="almada">VivaGym Almada</option>
+                        </select>
                         <input class="name" type="text" id="fname" name="fname" placeholder="Nome" required><br><br>
                         <input class="email" type="email" id="femail" name="femail" placeholder="E-mail" required><br><br>
                         <textarea class="mensagem" type="text" id="fmessage" name="fmessage" placeholder="Digita a tua mensagem aqui..." required></textarea><br><br>
