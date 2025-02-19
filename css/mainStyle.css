@@ -44,13 +44,13 @@ body{
     float: left;
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 426px){
     .navbar .logo{
         padding-left: 15px;
     }
 }
 
-@media screen and (min-width: 425px){
+@media screen and (min-width: 426px){
     .navbar .logo{
         padding-left: 50px;
     }
@@ -62,7 +62,7 @@ body{
 }
 
   
-.navbar li a {
+.navbar li a:not(.logo_a) {
     display: block;
     color: white;
     text-align: center;
@@ -77,7 +77,7 @@ body{
     align-items: center;
 }
   
-.navbar .active {
+.navbar .active:not(.logo_a):not(.menu-icon) {
     background-color: #ff1a8c;
     height: 100%;
     display: flex;
@@ -678,7 +678,7 @@ body{
             font-size: 55px;
         }
 
-        @media screen and (max-width:514px) and (min-width: 425px){
+        @media screen and (max-width:514px) and (min-width: 426px){
             .corpos .title{
                 font-size: 45px;
             }
@@ -706,9 +706,9 @@ body{
         }
 
 
-        @media screen and (max-width:425px){
+        @media screen and (max-width:426px){
             .corpos .title{
-                font-size: 35px;
+                font-size: 11vw;
             }
 
             .corpos .corpo1 img{
@@ -1057,12 +1057,13 @@ ol, li {
 }
 .review .stars{
     padding-left: 15px;
+    overflow: hidden;
 }
 .review .text{
     padding: 15px;
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 426px){
     .reviews .title{
         font-size: 50px;
         padding-left: 20px;
@@ -1138,6 +1139,7 @@ ol, li {
 
 .galeria{
     background-color: black;
+    padding-bottom: 100px;
 }
 
 .galeria i{
@@ -1189,6 +1191,12 @@ ol, li {
     .galeria .grid-container div{
         padding-bottom: 50px;
     }
+
+    @media screen and (max-width: 426px){
+        .galeria{
+            padding-bottom: 50px;
+        }
+    }
 }
 
 
@@ -1197,10 +1205,12 @@ ol, li {
 .contactos{
     padding-right: 50px;
     padding-left: 70px;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 150px;
     background-color: #1a1a1a;
     display: flex;
+
+    overflow-x: hidden;
 }
 
 .contactos p{
@@ -1247,7 +1257,7 @@ ol, li {
 }
 
 
-.form .name, .form .email{
+.form .name, .form .email, .form .mensagem, .form select{
     width: 50%;
     padding: 12px 20px;
     border: 1px solid #ccc;
@@ -1255,13 +1265,11 @@ ol, li {
     box-sizing: border-box;
 }
 
-.form .mensagem{
-    width: 50%;
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+
+.form select{
+    margin-bottom: 20px;
 }
+
 
 
 input[type=submit]{
@@ -1295,11 +1303,11 @@ input[type=submit]:hover{
         text-align: center;
     }
 
-    .form .name, .form .email, .form .mensagem{
+    .form .name, .form .email, .form .mensagem, .form select{
         width: 80%;
     }
 
-    @media screen and (max-width: 425px){
+    @media screen and (max-width: 4256px){
 
         .contactos{
             padding-left: 20px;
